@@ -1,0 +1,583 @@
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Source Code Pro', monospace;
+    background: linear-gradient(135deg, #0a0a0a 0%, #111111 50%, #1a1a1a 100%);
+    color: #f5f5f5;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* Utility classes */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Cyber grid background */
+.main-container {
+    background-image: 
+        linear-gradient(rgba(0, 255, 65, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 65, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    min-height: 100vh;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    overflow: hidden;
+    padding: 2rem 0;
+}
+
+.bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 0, 64, 0.2) 0%, transparent 50%, rgba(0, 255, 65, 0.2) 100%);
+    z-index: 1;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 10;
+}
+
+/* Warning Header */
+.warning-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.warning-badge {
+    display: inline-block;
+    background: #ffff00;
+    color: #000;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: bold;
+    animation: blink 1s infinite;
+}
+
+/* Headlines */
+.headline-section {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.main-title {
+    font-family: 'Orbitron', monospace;
+    font-size: clamp(2rem, 8vw, 4rem);
+    font-weight: 900;
+    color: white;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.glitch-text {
+    position: relative;
+    color: #ff0040;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitch-text::before {
+    animation: glitch 0.3s infinite;
+    color: #ff0040;
+    z-index: -1;
+    transform: translate(-1px, -1px);
+}
+
+.glitch-text::after {
+    animation: glitch 0.3s infinite reverse;
+    color: #00ff41;
+    z-index: -2;
+    transform: translate(1px, 1px);
+}
+
+.matrix-text {
+    color: #00ff41;
+    animation: pulse 2s infinite;
+}
+
+.subtitle {
+    font-size: clamp(1.25rem, 4vw, 2rem);
+    color: #ffff00;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle-secondary {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Countdown Timer */
+.countdown-card {
+    background: #111111;
+    border: 2px solid #ff0040;
+    padding: 1.5rem;
+    margin: 2rem auto;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 0.5rem;
+}
+
+.countdown-warning {
+    color: #ff0040;
+    font-weight: bold;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    animation: blink 1s infinite;
+}
+
+.countdown-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-family: 'Orbitron', monospace;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.time-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffff00;
+}
+
+.time-label {
+    font-size: 0.75rem;
+    color: white;
+}
+
+.time-separator {
+    color: #ffff00;
+}
+
+.pulse-red {
+    color: #ff0040 !important;
+    animation: pulse 1s infinite;
+}
+
+/* Main CTA */
+.main-cta {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.cta-button {
+    background: #ff0040;
+    color: white;
+    font-family: 'Orbitron', monospace;
+    font-weight: 900;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    padding: 1.5rem 2rem;
+    border: 4px solid #ffff00;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    animation: pulse-red 2s infinite;
+    display: block;
+    margin: 0 auto;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    background: rgba(255, 0, 64, 0.8);
+}
+
+.cta-subtext {
+    font-size: 0.875rem;
+}
+
+.cta-benefits {
+    color: #00ff41;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    animation: blink 2s infinite;
+}
+
+/* Payment Proofs Section */
+.payment-proofs-section {
+    background: rgba(17, 17, 17, 0.5);
+    padding: 3rem 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-family: 'Orbitron', monospace;
+    font-weight: bold;
+    color: #00ff41;
+    margin-bottom: 2rem;
+}
+
+.proofs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.proof-card {
+    background: #0a0a0a;
+    border: 1px solid #00ff41;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.proof-amount {
+    color: #00ff41;
+    font-weight: bold;
+    font-size: 1.125rem;
+}
+
+.proof-type {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.875rem;
+}
+
+.proof-time .time {
+    color: #ffff00;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.proof-time .status {
+    color: #00ff41;
+    font-size: 0.75rem;
+    animation: pulse 2s infinite;
+}
+
+/* Pain Points Section */
+.pain-points-section {
+    padding: 3rem 0;
+}
+
+.pain-title {
+    text-align: center;
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    font-family: 'Orbitron', monospace;
+    font-weight: 900;
+    color: #ff0040;
+    margin-bottom: 2rem;
+}
+
+.reality-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.reality-card {
+    background: #111111;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+}
+
+.current-reality {
+    border: 2px solid #ff0040;
+}
+
+.new-reality {
+    border: 2px solid #00ff41;
+}
+
+.reality-title {
+    color: #ffff00;
+    font-weight: bold;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.new-reality .reality-title {
+    color: #00ff41;
+}
+
+.reality-list {
+    list-style: none;
+    color: white;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.reality-list li {
+    margin-bottom: 0.5rem;
+}
+
+/* Testimonials */
+.testimonials-section {
+    background: rgba(17, 17, 17, 0.3);
+    padding: 3rem 0;
+}
+
+.testimonials-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.testimonial-card {
+    background: #0a0a0a;
+    border: 1px solid #0080ff;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial-avatar {
+    font-size: 2rem;
+}
+
+.testimonial-info {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.testimonial-name {
+    color: #00ff41;
+    font-weight: bold;
+}
+
+.testimonial-time {
+    color: #ffff00;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.875rem;
+}
+
+.testimonial-text {
+    color: white;
+    margin-bottom: 1rem;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.testimonial-profit {
+    color: #ff0040;
+    font-weight: bold;
+}
+
+/* Trust Badges */
+.trust-badges-section {
+    background: #0a0a0a;
+    padding: 2rem 0;
+}
+
+.badges-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.badge-icon {
+    font-size: 1.5rem;
+}
+
+.badge-text {
+    font-weight: bold;
+}
+
+.badge:nth-child(1) .badge-text {
+    color: #00ff41;
+}
+
+.badge:nth-child(2) .badge-text {
+    color: #ffff00;
+}
+
+.badge:nth-child(3) .badge-text {
+    color: #ff0040;
+}
+
+/* Final CTA */
+.final-cta-section {
+    background: linear-gradient(to top, rgba(255, 0, 64, 0.2), transparent);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.final-title {
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    font-family: 'Orbitron', monospace;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.final-subtitle {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    color: #ffff00;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.final-cta-button {
+    background: #00ff41;
+    color: #000;
+    font-family: 'Orbitron', monospace;
+    font-weight: 900;
+    font-size: clamp(1.25rem, 4vw, 2rem);
+    padding: 2rem 3rem;
+    border: 4px solid #ffff00;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    animation: pulse 2s infinite;
+    margin-bottom: 1.5rem;
+}
+
+.final-cta-button:hover {
+    transform: scale(1.1);
+    background: rgba(0, 255, 65, 0.8);
+}
+
+.final-cta-subtext {
+    font-size: 1rem;
+}
+
+.final-warning {
+    margin-top: 1.5rem;
+}
+
+.warning-text {
+    color: #ff0040;
+    font-size: 0.875rem;
+    font-weight: bold;
+    animation: blink 1s infinite;
+}
+
+/* Footer */
+.footer {
+    background: #0a0a0a;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer-text {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.875rem;
+    font-family: 'Source Code Pro', monospace;
+}
+
+/* Animations */
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+@keyframes pulse-red {
+    0%, 100% {
+        box-shadow: 0 0 5px #ff0040, 0 0 10px #ff0040, 0 0 15px #ff0040;
+    }
+    50% {
+        box-shadow: 0 0 10px #ff0040, 0 0 20px #ff0040, 0 0 30px #ff0040;
+    }
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0.3; }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .countdown-display {
+        font-size: 1.5rem;
+        gap: 0.5rem;
+    }
+    
+    .proofs-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .reality-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .badges-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .final-cta-button {
+        padding: 1.5rem 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 0.5rem;
+    }
+    
+    .countdown-card {
+        padding: 1rem;
+    }
+    
+    .cta-button {
+        padding: 1rem 1.5rem;
+    }
+    
+    .testimonial-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+}
