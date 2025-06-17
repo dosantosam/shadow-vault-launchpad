@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,18 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Underground theme colors
+				electric: {
+					red: '#ff0040',
+					green: '#00ff41',
+					blue: '#0080ff',
+					yellow: '#ffff00'
+				},
+				matrix: {
+					black: '#0a0a0a',
+					dark: '#111111',
+					gray: '#1a1a1a'
 				}
 			},
 			borderRadius: {
@@ -84,11 +97,50 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pulse-red': {
+					'0%, 100%': {
+						boxShadow: '0 0 5px #ff0040, 0 0 10px #ff0040, 0 0 15px #ff0040'
+					},
+					'50%': {
+						boxShadow: '0 0 10px #ff0040, 0 0 20px #ff0040, 0 0 30px #ff0040'
+					}
+				},
+				'glitch': {
+					'0%': {
+						transform: 'translate(0)'
+					},
+					'20%': {
+						transform: 'translate(-2px, 2px)'
+					},
+					'40%': {
+						transform: 'translate(-2px, -2px)'
+					},
+					'60%': {
+						transform: 'translate(2px, 2px)'
+					},
+					'80%': {
+						transform: 'translate(2px, -2px)'
+					},
+					'100%': {
+						transform: 'translate(0)'
+					}
+				},
+				'blink': {
+					'0%, 50%': {
+						opacity: '1'
+					},
+					'51%, 100%': {
+						opacity: '0.3'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-red': 'pulse-red 2s infinite',
+				'glitch': 'glitch 0.3s infinite',
+				'blink': 'blink 1s infinite'
 			}
 		}
 	},
