@@ -6,6 +6,21 @@ let timeLeft = {
     seconds: 33
 };
 
+// Course pricing logic
+const coursePrice = 197;
+const courseNames = [
+    'João comprou este curso',
+    'Mariana acabou de garantir acesso',
+    'Carlos comprou o curso',
+    'Ana garantiu seu acesso',
+    'Rafael adquiriu o curso',
+    'Patricia garantiu acesso',
+    'Bruno comprou agora',
+    'Camila acabou de comprar',
+    'Diego garantiu seu lugar',
+    'Fernanda adquiriu o curso'
+];
+
 function updateCountdown() {
     // Update main countdown
     document.getElementById('hours').textContent = String(timeLeft.hours).padStart(2, '0');
@@ -58,7 +73,7 @@ function handleCtaClick() {
     
     // Here you would typically redirect to a checkout page or open a modal
     // For demo purposes, we'll show an alert
-    alert('🚀 Redirecionando para área de pagamento...\n\n✅ Acesso 100% seguro e anônimo');
+    alert(`🚀 Redirecionando para pagamento...\n\n✅ Curso completo por apenas R$ ${coursePrice}\n✅ Acesso vitalício\n✅ Garantia de 7 dias`);
 }
 
 // Add some dynamic effects
@@ -103,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Simulate live payment updates
+    // Simulate live course purchases
     const proofAmounts = document.querySelectorAll('.proof-amount');
     const proofTimes = document.querySelectorAll('.proof-time .time');
     
@@ -111,10 +126,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Randomly update one proof every 45-90 seconds
         if (Math.random() < 0.7) {
             const randomIndex = Math.floor(Math.random() * proofAmounts.length);
-            const amounts = ['R$ 15,670', 'R$ 8,920', 'R$ 12,340', 'R$ 23,450', 'R$ 7,890', 'R$ 19,120'];
             const times = ['14:42', '15:13', '15:28', '15:35', '15:41', '15:47'];
             
-            proofAmounts[randomIndex].textContent = amounts[Math.floor(Math.random() * amounts.length)];
+            proofAmounts[randomIndex].textContent = courseNames[Math.floor(Math.random() * courseNames.length)];
             proofTimes[randomIndex].textContent = times[Math.floor(Math.random() * times.length)];
             
             // Add flash effect
@@ -224,7 +238,7 @@ setTimeout(() => {
     }
 }, 30000);
 
-// Add exit-intent popup
+// Enhanced exit-intent popup
 let exitIntentShown = false;
 
 document.addEventListener('mouseleave', (e) => {
@@ -239,7 +253,7 @@ document.addEventListener('mouseleave', (e) => {
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background: rgba(0, 0, 0, 0.9);
+                background: rgba(0, 0, 0, 0.95);
                 z-index: 10000;
                 display: flex;
                 align-items: center;
@@ -259,11 +273,11 @@ document.addEventListener('mouseleave', (e) => {
                         ⚠️ ESPERE! ⚠️
                     </h2>
                     <p style="color: #ffff00; font-size: 1.2rem; margin-bottom: 1rem;">
-                        Você está prestes a perder a chance da sua vida!
+                        Você está perdendo a chance de economizar milhares em impostos!
                     </p>
                     <p style="color: white; margin-bottom: 2rem;">
-                        Esta oportunidade pode NUNCA mais aparecer.<br>
-                        Não deixe o arrependimento te consumir.
+                        Este curso pode economizar mais em impostos do que você pagaria por ele.<br>
+                        Não deixe o governo continuar te explorando.
                     </p>
                     <button onclick="this.parentElement.parentElement.remove(); handleCtaClick();" style="
                         background: #00ff41;
@@ -277,7 +291,7 @@ document.addEventListener('mouseleave', (e) => {
                         margin-right: 1rem;
                         font-family: 'Orbitron', monospace;
                     ">
-                        🚀 SIM, QUERO ESCAPAR!
+                        🚀 SIM, QUERO ECONOMIZAR!
                     </button>
                     <button onclick="this.parentElement.parentElement.remove();" style="
                         background: transparent;
@@ -288,7 +302,7 @@ document.addEventListener('mouseleave', (e) => {
                         border-radius: 5px;
                         cursor: pointer;
                     ">
-                        Continuar escravo...
+                        Continuar pagando demais...
                     </button>
                 </div>
             </div>
@@ -299,4 +313,4 @@ document.addEventListener('mouseleave', (e) => {
 });
 
 // Log page view for analytics
-console.log('Underground landing page loaded:', new Date().toLocaleString());
+console.log('Tax optimization landing page loaded:', new Date().toLocaleString());
