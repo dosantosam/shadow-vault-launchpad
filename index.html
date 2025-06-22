@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -50,26 +51,54 @@
                     </p>
                 </div>
 
-                <!-- Countdown Timer -->
-                <div class="countdown-card">
+                <!-- Compact Countdown Timer -->
+                <div class="countdown-card compact">
                     <p class="countdown-warning">
                         🚨 OFERTA POR TEMPO LIMITADO 🚨
                     </p>
-                    <div class="countdown-display">
+                    <div class="countdown-display compact">
                         <div class="time-unit">
                             <span id="hours">02</span>
-                            <span class="time-label">HORAS</span>
+                            <span class="time-label">H</span>
                         </div>
                         <div class="time-separator">:</div>
                         <div class="time-unit">
                             <span id="minutes">47</span>
-                            <span class="time-label">MINS</span>
+                            <span class="time-label">M</span>
                         </div>
                         <div class="time-separator">:</div>
                         <div class="time-unit pulse-red">
                             <span id="seconds">33</span>
-                            <span class="time-label">SEGS</span>
+                            <span class="time-label">S</span>
                         </div>
+                    </div>
+                </div>
+
+                <!-- VSL Section -->
+                <div class="vsl-section">
+                    <div class="vsl-container">
+                        <h2 class="vsl-title">
+                            🎯 ASSISTA AGORA: Os Segredos dos Ricos
+                        </h2>
+                        <div class="video-wrapper">
+                            <div class="video-placeholder" id="videoPlayer">
+                                <div class="video-thumbnail">
+                                    <div class="play-button" onclick="loadVideo()">
+                                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none">
+                                            <circle cx="12" cy="12" r="10" fill="#ff0040"/>
+                                            <polygon points="10,8 16,12 10,16" fill="white"/>
+                                        </svg>
+                                    </div>
+                                    <div class="video-overlay">
+                                        <h3>🔥 VÍDEO EXCLUSIVO 🔥</h3>
+                                        <p>Descubra como pagar menos impostos LEGALMENTE</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="vsl-subtitle">
+                            ⚡ Em menos de 10 minutos você vai descobrir os métodos que mudaram a vida de milhares de pessoas
+                        </p>
                     </div>
                 </div>
 
@@ -78,7 +107,7 @@
                     <button class="cta-button" onclick="handleCtaClick()">
                         💎 ACESSE O CURSO AGORA 💎
                         <br />
-                        <span class="cta-subtext">Por Apenas R$ 197</span>
+                        <span class="cta-subtext">Por Apenas R$ 19,90</span>
                     </button>
                     <p class="cta-benefits">
                         ✅ ACESSO VITALÍCIO • ✅ MÉTODOS 100% LEGAIS • ✅ GARANTIA DE 7 DIAS
@@ -261,7 +290,7 @@
                 <button class="final-cta-button" onclick="handleCtaClick()">
                     🚀 GARANTIR MEU ACESSO 🚀
                     <br />
-                    <span class="final-cta-subtext">Por Apenas R$ 197</span>
+                    <span class="final-cta-subtext">Por Apenas R$ 19,90</span>
                 </button>
                 
                 <div class="final-warning">
@@ -277,6 +306,26 @@
             <p class="footer-text">
                 Este curso contém métodos 100% legais de otimização fiscal • Garantia de 7 dias
             </p>
+        </div>
+    </div>
+
+    <!-- Exit Intent Popup -->
+    <div id="exitPopup" class="exit-popup" style="display: none;">
+        <div class="exit-popup-overlay">
+            <div class="exit-popup-content">
+                <div class="exit-popup-close" onclick="closeExitPopup()">&times;</div>
+                <h2>🚨 ESPERA! NÃO VAZA AINDA! 🚨</h2>
+                <p class="exit-warning">Você está prestes a perder a ÚNICA chance de descobrir os segredos que os RICOS usam para pagar MENOS impostos!</p>
+                <div class="exit-offer">
+                    <h3>🔥 OFERTA RELÂMPAGO 🔥</h3>
+                    <p class="exit-price">De <span class="old-price">R$ 197</span> por apenas <span class="new-price">R$ 19,90</span></p>
+                    <p class="exit-urgency">Esta oferta expira em <span id="exit-timer">05:00</span> minutos!</p>
+                </div>
+                <button class="exit-cta-button" onclick="handleCtaClick()">
+                    💎 GARANTIR AGORA R$ 19,90 💎
+                </button>
+                <p class="exit-guarantee">✅ Garantia incondicional de 7 dias</p>
+            </div>
         </div>
     </div>
 

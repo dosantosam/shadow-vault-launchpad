@@ -145,6 +145,12 @@ body {
     border-radius: 0.5rem;
 }
 
+.countdown-card.compact {
+    padding: 1rem;
+    margin: 1.5rem auto;
+    max-width: 350px;
+}
+
 .countdown-warning {
     color: #ff0040;
     font-weight: bold;
@@ -163,6 +169,11 @@ body {
     font-size: 2rem;
 }
 
+.countdown-display.compact {
+    gap: 0.75rem;
+    font-size: 1.5rem;
+}
+
 .time-unit {
     display: flex;
     flex-direction: column;
@@ -175,6 +186,10 @@ body {
     color: white;
 }
 
+.countdown-display.compact .time-label {
+    font-size: 0.625rem;
+}
+
 .time-separator {
     color: #ffff00;
 }
@@ -182,6 +197,239 @@ body {
 .pulse-red {
     color: #ff0040 !important;
     animation: pulse 1s infinite;
+}
+
+/* VSL Section */
+.vsl-section {
+    background: rgba(17, 17, 17, 0.8);
+    padding: 2rem 0;
+    margin: 2rem 0;
+    border: 1px solid #00ff41;
+    border-radius: 0.5rem;
+}
+
+.vsl-container {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.vsl-title {
+    font-family: 'Orbitron', monospace;
+    font-size: clamp(1.25rem, 4vw, 2rem);
+    font-weight: 900;
+    color: #00ff41;
+    margin-bottom: 1.5rem;
+    animation: pulse 2s infinite;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto 1rem;
+    aspect-ratio: 16/9;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(255, 0, 64, 0.3);
+}
+
+.video-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    border: 2px solid #ff0040;
+}
+
+.video-thumbnail {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-image: 
+        linear-gradient(rgba(255, 0, 64, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 0, 64, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.play-button {
+    position: absolute;
+    z-index: 10;
+    transition: transform 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+.play-button:hover {
+    transform: scale(1.1);
+}
+
+.video-overlay {
+    text-align: center;
+    color: white;
+    z-index: 5;
+}
+
+.video-overlay h3 {
+    font-family: 'Orbitron', monospace;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    font-weight: 900;
+    color: #ffff00;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.video-overlay p {
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.vsl-subtitle {
+    font-size: clamp(0.875rem, 2.5vw, 1.125rem);
+    color: #ffff00;
+    font-weight: bold;
+    animation: blink 2s infinite;
+}
+
+/* Video Player (when loaded) */
+.video-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Exit Intent Popup */
+.exit-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.exit-popup-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.exit-popup-content {
+    background: #111111;
+    border: 3px solid #ff0040;
+    border-radius: 1rem;
+    padding: 2rem;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    animation: scale-in 0.3s ease-out;
+}
+
+.exit-popup-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    color: #ff0040;
+    cursor: pointer;
+    line-height: 1;
+    font-weight: bold;
+}
+
+.exit-popup-close:hover {
+    color: #ffff00;
+}
+
+.exit-popup h2 {
+    font-family: 'Orbitron', monospace;
+    color: #ff0040;
+    font-size: clamp(1.25rem, 4vw, 1.75rem);
+    margin-bottom: 1rem;
+    animation: blink 1s infinite;
+}
+
+.exit-warning {
+    color: white;
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+}
+
+.exit-offer h3 {
+    color: #00ff41;
+    font-family: 'Orbitron', monospace;
+    font-size: clamp(1rem, 3vw, 1.25rem);
+    margin-bottom: 0.5rem;
+    animation: pulse 2s infinite;
+}
+
+.exit-price {
+    font-size: clamp(1.125rem, 3.5vw, 1.5rem);
+    margin-bottom: 0.5rem;
+}
+
+.old-price {
+    color: #ff0040;
+    text-decoration: line-through;
+}
+
+.new-price {
+    color: #00ff41;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.exit-urgency {
+    color: #ffff00;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    animation: blink 1s infinite;
+}
+
+.exit-cta-button {
+    background: #ff0040;
+    color: white;
+    font-family: 'Orbitron', monospace;
+    font-weight: 900;
+    font-size: clamp(1rem, 3vw, 1.25rem);
+    padding: 1rem 2rem;
+    border: 3px solid #ffff00;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    animation: pulse-red 2s infinite;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.exit-cta-button:hover {
+    transform: scale(1.05);
+    background: rgba(255, 0, 64, 0.8);
+}
+
+.exit-guarantee {
+    color: #00ff41;
+    font-size: 0.875rem;
+    font-weight: bold;
 }
 
 /* Main CTA */
