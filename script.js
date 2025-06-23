@@ -1,18 +1,36 @@
 
-// Countdown Timer
+// Persistent Countdown Timer
 function startCountdown() {
     const hoursElement = document.getElementById('hours');
     const minutesElement = document.getElementById('minutes');
     const secondsElement = document.getElementById('seconds');
     const finalCountdownElement = document.getElementById('final-countdown');
     
-    // Set initial time (2 hours, 47 minutes, 33 seconds)
-    let totalSeconds = 2 * 3600 + 47 * 60 + 33;
+    // Get stored end time or create new one (15 minutes from now)
+    let endTime = localStorage.getItem('countdownEndTime');
+    
+    if (!endTime) {
+        // First visit - set countdown to 15 minutes from now
+        const now = new Date().getTime();
+        endTime = now + (15 * 60 * 1000); // 15 minutes in milliseconds
+        localStorage.setItem('countdownEndTime', endTime);
+    }
     
     function updateDisplay() {
-        const hours = Math.floor(totalSeconds / 3600);
-        const minutes = Math.floor((totalSeconds % 3600) / 60);
-        const seconds = totalSeconds % 60;
+        const now = new Date().getTime();
+        const timeLeft = parseInt(endTime) - now;
+        
+        if (timeLeft <= 0) {
+            // Reset timer when it reaches 0
+            const newEndTime = new Date().getTime() + (15 * 60 * 1000);
+            localStorage.setItem('countdownEndTime', newEndTime);
+            endTime = newEndTime;
+            return;
+        }
+        
+        const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
         
         if (hoursElement) hoursElement.textContent = hours.toString().padStart(2, '0');
         if (minutesElement) minutesElement.textContent = minutes.toString().padStart(2, '0');
@@ -23,22 +41,11 @@ function startCountdown() {
         }
     }
     
-    function countdown() {
-        updateDisplay();
-        
-        if (totalSeconds > 0) {
-            totalSeconds--;
-        } else {
-            // Reset to initial time when it reaches 0
-            totalSeconds = 2 * 3600 + 47 * 60 + 33;
-        }
-    }
-    
     // Update immediately
     updateDisplay();
     
     // Update every second
-    setInterval(countdown, 1000);
+    setInterval(updateDisplay, 1000);
 }
 
 // Payment Proofs Animation
@@ -78,16 +85,12 @@ function startPaymentProofs() {
     });
 }
 
-// CTA Click Handler
+// CTA Click Handler - Updated to redirect to payment link
 function handleCtaClick() {
-    // Add click tracking or redirect logic here
     console.log('CTA clicked - redirecting to checkout...');
     
-    // Example: redirect to checkout page
-    // window.location.href = 'https://your-checkout-page.com';
-    
-    // For now, just show an alert
-    alert('Redirecionando para o checkout...');
+    // Redirect to the payment link
+    window.open('https://pay.kirvano.com/3eaa9564-6bd6-49d5-a83b-723fc3cc5ce6', '_blank');
 }
 
 // Exit intent popup functionality
