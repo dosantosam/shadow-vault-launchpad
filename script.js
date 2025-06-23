@@ -1,3 +1,4 @@
+
 // Countdown Timer
 function startCountdown() {
     const hoursElement = document.getElementById('hours');
@@ -87,29 +88,6 @@ function handleCtaClick() {
     
     // For now, just show an alert
     alert('Redirecionando para o checkout...');
-}
-
-// Video loading functionality
-function loadVideo() {
-    const videoPlayer = document.getElementById('videoPlayer');
-    const videoUrl = 'https://youtu.be/untD4TJy5xs?si=KzH0PFQufqV1DMwZ';
-    
-    // Convert YouTube URL to embed format
-    const videoId = videoUrl.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/);
-    
-    if (videoId && videoId[1]) {
-        const embedUrl = `https://www.youtube.com/embed/${videoId[1]}?autoplay=1&rel=0`;
-        videoPlayer.innerHTML = `
-            <iframe class="video-iframe" 
-                    src="${embedUrl}" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-            </iframe>
-        `;
-    } else {
-        // Fallback for invalid URL - keep placeholder
-        console.log('Video will be available soon');
-    }
 }
 
 // Exit intent popup functionality
