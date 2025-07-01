@@ -48,43 +48,6 @@ function startCountdown() {
     setInterval(updateDisplay, 1000);
 }
 
-// Payment Proofs Animation
-function startPaymentProofs() {
-    const proofCards = document.querySelectorAll('.proof-card');
-    const names = ['João', 'Mariana', 'Carlos', 'Ana', 'Pedro', 'Juliana', 'Roberto', 'Fernanda'];
-    
-    function updateProofCard(card, index) {
-        const nameElement = card.querySelector('.proof-amount');
-        const timeElement = card.querySelector('.time');
-        
-        if (nameElement && timeElement) {
-            const randomName = names[Math.floor(Math.random() * names.length)];
-            const now = new Date();
-            const randomMinutes = Math.floor(Math.random() * 60);
-            now.setMinutes(now.getMinutes() - randomMinutes);
-            
-            nameElement.textContent = `${randomName} comprou este curso`;
-            timeElement.textContent = now.toLocaleTimeString('pt-BR', { 
-                hour: '2-digit', 
-                minute: '2-digit' 
-            });
-            
-            // Add animation
-            card.style.animation = 'none';
-            setTimeout(() => {
-                card.style.animation = 'fadeIn 0.5s ease-out';
-            }, 10);
-        }
-    }
-    
-    // Update proof cards every 15-30 seconds
-    proofCards.forEach((card, index) => {
-        setInterval(() => {
-            updateProofCard(card, index);
-        }, (15 + Math.random() * 15) * 1000);
-    });
-}
-
 // CTA Click Handler - Updated to redirect to payment link
 function handleCtaClick() {
     console.log('CTA clicked - redirecting to checkout...');
@@ -163,6 +126,5 @@ document.getElementById('exitPopup').addEventListener('click', function(e) {
 // Initialize everything when page loads
 document.addEventListener('DOMContentLoaded', function() {
     startCountdown();
-    startPaymentProofs();
     console.log('Landing page loaded successfully');
 });
