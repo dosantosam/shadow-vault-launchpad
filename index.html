@@ -18,7 +18,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -26,221 +26,190 @@
 <body>
     <div class="main-container">
         <!-- Hero Section -->
-        <div class="hero-section">
-            <div class="bg-overlay"></div>
-            
+        <section class="hero-section">
             <div class="container">
-                <!-- Main Headline -->
-                <div class="headline-section">
-                    <h1 class="main-title">
-                        <span class="glitch-text" data-text="O SEGREDO">
-                            O SEGREDO
-                        </span>
-                        <br />
-                        <span class="matrix-text">
-                            TRIBUTÁRIO
-                        </span>
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        O Conhecimento Tributário <span class="highlight">Reservado aos Especialistas</span>
                     </h1>
                     
-                    <div class="subtitle-container">
-                        <p class="subtitle-main">
-                            Que Todo Contador Conhece, Mas Poucos Compartilham
-                        </p>
-                        <p class="subtitle-secondary">
-                            Estratégias profissionais de otimização fiscal traduzidas para linguagem simples
-                        </p>
-                        <p class="subtitle-tertiary">
-                            Funciona para CLT, Freelancers e Pequenos Empreendedores
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Compact Countdown Timer -->
-                <div class="countdown-card compact">
-                    <p class="countdown-warning">
-                        🚨 ACESSO LIMITADO POR TEMPO 🚨
+                    <p class="hero-subtitle">
+                        As estratégias que contadores experientes aplicam há décadas — agora em linguagem clara para quem trabalha de carteira assinada, freelancers e pequenos empreendedores.
                     </p>
-                    <div class="countdown-display compact">
-                        <div class="time-unit">
-                            <span id="hours">00</span>
-                            <span class="time-label">H</span>
+
+                    <div class="countdown-container">
+                        <div class="countdown-label">Acesso limitado por:</div>
+                        <div class="countdown-display">
+                            <div class="time-unit">
+                                <span id="hours">00</span>
+                                <span class="time-label">horas</span>
+                            </div>
+                            <div class="time-separator">:</div>
+                            <div class="time-unit">
+                                <span id="minutes">15</span>
+                                <span class="time-label">min</span>
+                            </div>
+                            <div class="time-separator">:</div>
+                            <div class="time-unit">
+                                <span id="seconds">00</span>
+                                <span class="time-label">seg</span>
+                            </div>
                         </div>
-                        <div class="time-separator">:</div>
-                        <div class="time-unit">
-                            <span id="minutes">15</span>
-                            <span class="time-label">M</span>
-                        </div>
-                        <div class="time-separator">:</div>
-                        <div class="time-unit pulse-red">
-                            <span id="seconds">00</span>
-                            <span class="time-label">S</span>
-                        </div>
+                    </div>
+
+                    <div class="hero-cta">
+                        <button class="cta-primary" onclick="handleCtaClick()">
+                            Acessar Agora por R$ 19,90
+                        </button>
+                        <p class="cta-guarantee">Garantia incondicional de 7 dias</p>
                     </div>
                 </div>
 
-                <!-- VSL Section -->
-                <div class="vsl-section">
-                    <div class="vsl-container">
-                        <h2 class="vsl-title">
-                            🎯 REVELAÇÃO: O Método dos Especialistas
-                        </h2>
-                        <div class="video-wrapper">
-                            <video class="video-player" controls poster="">
-                                <source src="public/VSL_4.mp4" type="video/mp4">
-                            </video>
+                <div class="hero-visual">
+                    <div class="visual-card">
+                        <div class="card-header">
+                            <div class="card-icon">📊</div>
+                            <h3>Método Profissional</h3>
                         </div>
-                        <p class="vsl-subtitle">
-                            ⚡ Descubra em poucos minutos o que a elite tributária usa há décadas
-                        </p>
+                        <div class="card-content">
+                            <p>Estratégias baseadas na legislação brasileira, traduzidas para linguagem acessível</p>
+                        </div>
                     </div>
-                </div>
-
-                <!-- Main CTA -->
-                <div class="main-cta">
-                    <button class="cta-button" onclick="handleCtaClick()">
-                        💼 ACESSAR O MÉTODO AGORA 💼
-                        <br />
-                        <span class="cta-subtext">Por Apenas R$ 19,90</span>
-                    </button>
-                    <p class="cta-benefits">
-                        ✅ MÉTODO PROFISSIONAL • ✅ 100% LEGAL • ✅ GARANTIA DE 7 DIAS
-                    </p>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Pain Points Section -->
-        <div class="pain-points-section">
+        <!-- Video Section -->
+        <section class="video-section">
             <div class="container">
-                <h2 class="pain-title">
-                    POR QUE VOCÊ AINDA NÃO SABIA DISSO?
-                </h2>
-                
-                <div class="reality-grid">
-                    <div class="reality-card current-reality">
-                        <h3 class="reality-title">🤔 A REALIDADE OCULTA:</h3>
-                        <ul class="reality-list">
-                            <li>• Contadores guardam essas estratégias para clientes VIP</li>
-                            <li>• Informações dispersas em códigos complexos</li>
-                            <li>• Linguagem técnica que intimida pessoas comuns</li>
-                            <li>• Você paga impostos como se não houvesse alternativa</li>
-                            <li>• Falta de conhecimento custa caro todo mês</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="reality-card new-reality">
-                        <h3 class="reality-title">💡 SUA NOVA REALIDADE:</h3>
-                        <ul class="reality-list">
-                            <li>• Conhecimento profissional em linguagem clara</li>
-                            <li>• Estratégias aplicáveis imediatamente</li>
-                            <li>• Confiança para otimizar sua carga tributária</li>
-                            <li>• Economia consistente todos os meses</li>
-                            <li>• Tranquilidade de estar 100% dentro da lei</li>
-                        </ul>
-                    </div>
+                <h2 class="section-title">Como Funciona na Prática</h2>
+                <div class="video-wrapper">
+                    <video class="video-player" controls poster="">
+                        <source src="public/VSL_4.mp4" type="video/mp4">
+                    </video>
                 </div>
+                <p class="video-caption">
+                    Descubra em poucos minutos as estratégias que a elite tributária aplica há décadas
+                </p>
             </div>
-        </div>
+        </section>
 
         <!-- Benefits Section -->
-        <div class="benefits-section">
+        <section class="benefits-section">
             <div class="container">
-                <h2 class="benefits-title">
-                    O QUE VOCÊ VAI DESCOBRIR
-                </h2>
+                <h2 class="section-title">O Que Você Vai Aprender</h2>
                 
                 <div class="benefits-grid">
                     <div class="benefit-card">
-                        <div class="benefit-icon">📋</div>
+                        <div class="benefit-icon">👔</div>
                         <h3 class="benefit-title">Para CLT</h3>
-                        <p class="benefit-description">Estratégias específicas para quem tem carteira assinada, incluindo deduções pouco conhecidas e planejamento anual.</p>
+                        <p class="benefit-description">
+                            Deduções específicas e planejamento anual que poucos conhecem, mas que estão na legislação há anos.
+                        </p>
                     </div>
                     
                     <div class="benefit-card">
                         <div class="benefit-icon">💼</div>
                         <h3 class="benefit-title">Para Freelancers</h3>
-                        <p class="benefit-description">Como estruturar sua atividade para máxima eficiência fiscal, escolher o regime certo e documentar despesas.</p>
+                        <p class="benefit-description">
+                            Como estruturar sua atividade para máxima eficiência fiscal e documentar despesas corretamente.
+                        </p>
                     </div>
                     
                     <div class="benefit-card">
                         <div class="benefit-icon">🏢</div>
                         <h3 class="benefit-title">Para Empreendedores</h3>
-                        <p class="benefit-description">Métodos profissionais de planejamento tributário adaptados para pequenos e médios negócios.</p>
+                        <p class="benefit-description">
+                            Métodos de planejamento tributário adaptados para pequenos e médios negócios.
+                        </p>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Trust Badges -->
-        <div class="trust-badges-section">
+        <!-- Trust Section -->
+        <section class="trust-section">
             <div class="container">
-                <h2 class="trust-title">MÉTODO BASEADO EM</h2>
-                <div class="badges-container">
-                    <div class="badge">
-                        <span class="badge-icon">⚖️</span>
-                        <span class="badge-text">LEGISLAÇÃO VIGENTE</span>
+                <h2 class="section-title">Por Que Você Pode Confiar</h2>
+                
+                <div class="trust-grid">
+                    <div class="trust-item">
+                        <div class="trust-icon">⚖️</div>
+                        <h3>100% Legal</h3>
+                        <p>Baseado na legislação brasileira vigente, sem gambiarras ou métodos duvidosos.</p>
                     </div>
-                    <div class="badge">
-                        <span class="badge-icon">🎓</span>
-                        <span class="badge-text">PRÁTICAS CONTÁBEIS</span>
+                    
+                    <div class="trust-item">
+                        <div class="trust-icon">🎓</div>
+                        <h3>Conhecimento Profissional</h3>
+                        <p>Estratégias que contadores experientes usam há décadas, agora acessíveis a todos.</p>
                     </div>
-                    <div class="badge">
-                        <span class="badge-icon">🛡️</span>
-                        <span class="badge-text">TOTAL SEGURANÇA</span>
+                    
+                    <div class="trust-item">
+                        <div class="trust-icon">🛡️</div>
+                        <h3>Garantia Total</h3>
+                        <p>7 dias para testar. Se não gostar, devolvemos 100% do valor sem perguntas.</p>
                     </div>
                 </div>
-                
+
                 <div class="trust-explanation">
-                    <p class="trust-text">
-                        Este não é um "hack" ou "gambiarra". São estratégias que contadores experientes usam há décadas, 
-                        baseadas na legislação brasileira e nas melhores práticas do mercado.
+                    <p>
+                        Este não é um "hack" tributário ou estratégia questionável. São métodos profissionais 
+                        que contadores aplicam regularmente, baseados na legislação brasileira e nas melhores 
+                        práticas do mercado.
                     </p>
-                    <p class="trust-text">
+                    <p>
                         A diferença é que agora você terá acesso a esse conhecimento em linguagem simples, 
-                        sem precisar pagar consultorias caras ou estudar códigos complexos.
+                        sem precisar pagar consultorias caras ou estudar códigos complexos por conta própria.
                     </p>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Final CTA -->
-        <div class="final-cta-section">
+        <!-- Final CTA Section -->
+        <section class="final-cta-section">
             <div class="container">
-                <h2 class="final-title">
-                    SUA DECISÃO DEFINE SEU FUTURO FISCAL
-                </h2>
-                <p class="final-subtitle">
-                    Continue pagando mais do que deveria, ou tome controle agora
-                </p>
-                
-                <button class="final-cta-button" onclick="handleCtaClick()">
-                    🎯 GARANTIR ACESSO IMEDIATO 🎯
-                    <br />
-                    <span class="final-cta-subtext">Por Apenas R$ 19,90</span>
-                </button>
-                
-                <div class="final-warning">
-                    <p class="warning-text">
-                        ⚠️ TEMPO LIMITADO: Oferta encerra em <span id="final-countdown">00:15:00</span> ⚠️
+                <div class="final-cta-content">
+                    <h2 class="final-title">
+                        Pare de Pagar Mais Impostos do Que Deveria
+                    </h2>
+                    <p class="final-subtitle">
+                        Acesse o conhecimento que contadores reservam para seus melhores clientes
                     </p>
-                </div>
-                
-                <div class="guarantee-section">
-                    <h3 class="guarantee-title">📋 GARANTIA INCONDICIONAL</h3>
-                    <p class="guarantee-text">
-                        Se em 7 dias você não estiver satisfeito com o conteúdo, 
-                        devolvemos 100% do seu investimento. Sem perguntas, sem burocracia.
-                    </p>
+                    
+                    <div class="price-display">
+                        <span class="currency">R$</span>
+                        <span class="amount">19,90</span>
+                        <span class="payment-info">pagamento único</span>
+                    </div>
+                    
+                    <button class="cta-primary large" onclick="handleCtaClick()">
+                        Começar Agora
+                    </button>
+                    
+                    <div class="final-guarantees">
+                        <div class="guarantee-item">
+                            ✅ Acesso imediato ao conteúdo
+                        </div>
+                        <div class="guarantee-item">
+                            ✅ Garantia incondicional de 7 dias
+                        </div>
+                        <div class="guarantee-item">
+                            ✅ Suporte especializado incluso
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- Footer -->
-        <div class="footer">
-            <p class="footer-text">
-                Método baseado na legislação brasileira • Garantia incondicional de 7 dias • Suporte especializado
-            </p>
-        </div>
+        <footer class="footer">
+            <div class="container">
+                <p class="footer-text">
+                    Método baseado na legislação brasileira • Garantia incondicional de 7 dias • Suporte especializado
+                </p>
+            </div>
+        </footer>
     </div>
 
     <!-- Exit Intent Popup -->
@@ -248,17 +217,20 @@
         <div class="exit-popup-overlay">
             <div class="exit-popup-content">
                 <div class="exit-popup-close" onclick="closeExitPopup()">&times;</div>
-                <h2>🔐 ÚLTIMA CHANCE!</h2>
-                <p class="exit-warning">Você está prestes a perder acesso aos segredos tributários que podem economizar milhares de reais por ano!</p>
+                <h2 class="exit-title">Não Perca Esta Oportunidade</h2>
+                <p class="exit-warning">
+                    Você está prestes a perder acesso às estratégias tributárias que podem economizar 
+                    milhares de reais por ano.
+                </p>
                 <div class="exit-offer">
-                    <h3>💎 OFERTA EXCLUSIVA 💎</h3>
-                    <p class="exit-price">Investimento único de <span class="new-price">R$ 19,90</span></p>
-                    <p class="exit-urgency">Esta janela se fecha em <span id="exit-timer">05:00</span> minutos!</p>
+                    <h3 class="exit-offer-title">Acesso Especial</h3>
+                    <p class="exit-price">Apenas <span class="price-highlight">R$ 19,90</span></p>
+                    <p class="exit-urgency">Esta janela se fecha em <span id="exit-timer">05:00</span> minutos</p>
                 </div>
-                <button class="exit-cta-button" onclick="handleCtaClick()">
-                    🎯 ACESSAR AGORA R$ 19,90 🎯
+                <button class="cta-primary" onclick="handleCtaClick()">
+                    Garantir Acesso Agora
                 </button>
-                <p class="exit-guarantee">✅ Garantia total de 7 dias</p>
+                <p class="exit-guarantee">Garantia total de 7 dias</p>
             </div>
         </div>
     </div>
