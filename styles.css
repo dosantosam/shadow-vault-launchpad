@@ -49,22 +49,6 @@ body {
     z-index: 10;
 }
 
-/* Warning Header */
-.warning-header {
-    text-align: center;
-    margin-bottom: 1.5rem;
-}
-
-.warning-badge {
-    display: inline-block;
-    background: #ffff00;
-    color: #000;
-    padding: 0.5rem 1rem;
-    font-size: 0.875rem;
-    font-weight: bold;
-    animation: blink 1s infinite;
-}
-
 /* Headlines */
 .headline-section {
     text-align: center;
@@ -254,6 +238,291 @@ body {
     animation: blink 2s infinite;
 }
 
+/* Main CTA */
+.main-cta {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.cta-button {
+    background: #ff0040;
+    color: white;
+    font-family: 'Orbitron', monospace;
+    font-weight: 900;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    padding: 1.5rem 2rem;
+    border: 4px solid #ffff00;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    animation: pulse-red 2s infinite;
+    display: block;
+    margin: 0 auto;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    background: rgba(255, 0, 64, 0.8);
+}
+
+.cta-subtext {
+    font-size: 0.875rem;
+}
+
+.cta-benefits {
+    color: #00ff41;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    animation: blink 2s infinite;
+}
+
+/* Pain Points Section */
+.pain-points-section {
+    padding: 3rem 0;
+}
+
+.pain-title {
+    text-align: center;
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    font-family: 'Orbitron', monospace;
+    font-weight: 900;
+    color: #ff0040;
+    margin-bottom: 2rem;
+}
+
+.reality-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.reality-card {
+    background: #111111;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+}
+
+.current-reality {
+    border: 2px solid #ff0040;
+}
+
+.new-reality {
+    border: 2px solid #00ff41;
+}
+
+.reality-title {
+    color: #ffff00;
+    font-weight: bold;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.new-reality .reality-title {
+    color: #00ff41;
+}
+
+.reality-list {
+    list-style: none;
+    color: white;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.reality-list li {
+    margin-bottom: 0.5rem;
+}
+
+/* Benefits Section */
+.benefits-section {
+    background: rgba(17, 17, 17, 0.5);
+    padding: 3rem 0;
+    margin: 2rem 0;
+}
+
+.benefits-title {
+    text-align: center;
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    font-family: 'Orbitron', monospace;
+    font-weight: 900;
+    color: #00ff41;
+    margin-bottom: 2rem;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.benefit-card {
+    background: #111111;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ffff00;
+    text-align: center;
+}
+
+.benefit-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.benefit-title {
+    color: #ffff00;
+    font-family: 'Orbitron', monospace;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.benefit-description {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+
+/* Trust Badges */
+.trust-badges-section {
+    background: rgba(17, 17, 17, 0.3);
+    padding: 3rem 0;
+}
+
+.trust-title {
+    text-align: center;
+    font-size: clamp(1.25rem, 4vw, 2rem);
+    font-family: 'Orbitron', monospace;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 2rem;
+}
+
+.badges-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.badge-icon {
+    font-size: 1.5rem;
+}
+
+.badge-text {
+    font-weight: bold;
+}
+
+.badge:nth-child(1) .badge-text {
+    color: #00ff41;
+}
+
+.badge:nth-child(2) .badge-text {
+    color: #ffff00;
+}
+
+.badge:nth-child(3) .badge-text {
+    color: #ff0040;
+}
+
+.trust-explanation {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.trust-text {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+/* Final CTA */
+.final-cta-section {
+    background: linear-gradient(to top, rgba(255, 0, 64, 0.2), transparent);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.final-title {
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    font-family: 'Orbitron', monospace;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.final-subtitle {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    color: #ffff00;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.final-cta-button {
+    background: #00ff41;
+    color: #000;
+    font-family: 'Orbitron', monospace;
+    font-weight: 900;
+    font-size: clamp(1.25rem, 4vw, 2rem);
+    padding: 2rem 3rem;
+    border: 4px solid #ffff00;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    animation: pulse 2s infinite;
+    margin-bottom: 1.5rem;
+}
+
+.final-cta-button:hover {
+    transform: scale(1.1);
+    background: rgba(0, 255, 65, 0.8);
+}
+
+.final-cta-subtext {
+    font-size: 1rem;
+}
+
+.final-warning {
+    margin: 1.5rem 0;
+}
+
+.warning-text {
+    color: #ff0040;
+    font-size: 0.875rem;
+    font-weight: bold;
+    animation: blink 1s infinite;
+}
+
+.guarantee-section {
+    background: rgba(17, 17, 17, 0.8);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    border: 1px solid #00ff41;
+    max-width: 600px;
+    margin: 2rem auto 0;
+}
+
+.guarantee-title {
+    color: #00ff41;
+    font-family: 'Orbitron', monospace;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.guarantee-text {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+
 /* Exit Intent Popup */
 .exit-popup {
     position: fixed;
@@ -380,197 +649,6 @@ body {
     font-weight: bold;
 }
 
-/* Main CTA */
-.main-cta {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.cta-button {
-    background: #ff0040;
-    color: white;
-    font-family: 'Orbitron', monospace;
-    font-weight: 900;
-    font-size: clamp(1rem, 3vw, 1.5rem);
-    padding: 1.5rem 2rem;
-    border: 4px solid #ffff00;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    transition: all 0.2s;
-    animation: pulse-red 2s infinite;
-    display: block;
-    margin: 0 auto;
-}
-
-.cta-button:hover {
-    transform: scale(1.05);
-    background: rgba(255, 0, 64, 0.8);
-}
-
-.cta-subtext {
-    font-size: 0.875rem;
-}
-
-.cta-benefits {
-    color: #00ff41;
-    font-size: 0.875rem;
-    margin-top: 0.5rem;
-    animation: blink 2s infinite;
-}
-
-/* Pain Points Section */
-.pain-points-section {
-    padding: 3rem 0;
-}
-
-.pain-title {
-    text-align: center;
-    font-size: clamp(1.5rem, 5vw, 3rem);
-    font-family: 'Orbitron', monospace;
-    font-weight: 900;
-    color: #ff0040;
-    margin-bottom: 2rem;
-}
-
-.reality-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.reality-card {
-    background: #111111;
-    padding: 1.5rem;
-    border-radius: 0.5rem;
-}
-
-.current-reality {
-    border: 2px solid #ff0040;
-}
-
-.new-reality {
-    border: 2px solid #00ff41;
-}
-
-.reality-title {
-    color: #ffff00;
-    font-weight: bold;
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-}
-
-.new-reality .reality-title {
-    color: #00ff41;
-}
-
-.reality-list {
-    list-style: none;
-    color: white;
-    font-family: 'Source Code Pro', monospace;
-}
-
-.reality-list li {
-    margin-bottom: 0.5rem;
-}
-
-/* Trust Badges */
-.trust-badges-section {
-    background: rgba(17, 17, 17, 0.3);
-    padding: 2rem 0;
-}
-
-.badges-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-}
-
-.badge {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.badge-icon {
-    font-size: 1.5rem;
-}
-
-.badge-text {
-    font-weight: bold;
-}
-
-.badge:nth-child(1) .badge-text {
-    color: #00ff41;
-}
-
-.badge:nth-child(2) .badge-text {
-    color: #ffff00;
-}
-
-.badge:nth-child(3) .badge-text {
-    color: #ff0040;
-}
-
-/* Final CTA */
-.final-cta-section {
-    background: linear-gradient(to top, rgba(255, 0, 64, 0.2), transparent);
-    padding: 4rem 0;
-    text-align: center;
-}
-
-.final-title {
-    font-size: clamp(1.5rem, 5vw, 3rem);
-    font-family: 'Orbitron', monospace;
-    font-weight: 900;
-    color: white;
-    margin-bottom: 1rem;
-}
-
-.final-subtitle {
-    font-size: clamp(1rem, 3vw, 1.5rem);
-    color: #ffff00;
-    font-weight: bold;
-    margin-bottom: 2rem;
-}
-
-.final-cta-button {
-    background: #00ff41;
-    color: #000;
-    font-family: 'Orbitron', monospace;
-    font-weight: 900;
-    font-size: clamp(1.25rem, 4vw, 2rem);
-    padding: 2rem 3rem;
-    border: 4px solid #ffff00;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    transition: all 0.3s;
-    animation: pulse 2s infinite;
-    margin-bottom: 1.5rem;
-}
-
-.final-cta-button:hover {
-    transform: scale(1.1);
-    background: rgba(0, 255, 65, 0.8);
-}
-
-.final-cta-subtext {
-    font-size: 1rem;
-}
-
-.final-warning {
-    margin-top: 1.5rem;
-}
-
-.warning-text {
-    color: #ff0040;
-    font-size: 0.875rem;
-    font-weight: bold;
-    animation: blink 1s infinite;
-}
-
 /* Footer */
 .footer {
     background: #0a0a0a;
@@ -646,6 +724,10 @@ body {
         grid-template-columns: 1fr;
     }
     
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
     .badges-container {
         flex-direction: column;
         align-items: center;
@@ -667,5 +749,9 @@ body {
     
     .cta-button {
         padding: 1rem 1.5rem;
+    }
+    
+    .benefit-card {
+        padding: 1.5rem;
     }
 }
