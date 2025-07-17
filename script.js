@@ -4,7 +4,6 @@ function startCountdown() {
     const hoursElement = document.getElementById('hours');
     const minutesElement = document.getElementById('minutes');
     const secondsElement = document.getElementById('seconds');
-    const finalCountdownElement = document.getElementById('final-countdown');
     
     // Get stored end time or create new one (15 minutes from now)
     let endTime = localStorage.getItem('countdownEndTime');
@@ -35,10 +34,6 @@ function startCountdown() {
         if (hoursElement) hoursElement.textContent = hours.toString().padStart(2, '0');
         if (minutesElement) minutesElement.textContent = minutes.toString().padStart(2, '0');
         if (secondsElement) secondsElement.textContent = seconds.toString().padStart(2, '0');
-        
-        if (finalCountdownElement) {
-            finalCountdownElement.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-        }
     }
     
     // Update immediately
@@ -80,7 +75,9 @@ function startExitTimer() {
     exitTimer = setInterval(() => {
         const minutes = Math.floor(timeLeft / 60);
         const seconds = timeLeft % 60;
-        timerElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        if (timerElement) {
+            timerElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
         
         if (timeLeft <= 0) {
             clearInterval(exitTimer);
@@ -117,11 +114,14 @@ document.addEventListener('keydown', function(e) {
 });
 
 // Close popup when clicking outside
-document.getElementById('exitPopup').addEventListener('click', function(e) {
-    if (e.target === this) {
-        closeExitPopup();
-    }
-});
+const exitPopup = document.getElementById('exitPopup');
+if (exitPopup) {
+    exitPopup.addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeExitPopup();
+        }
+    });
+}
 
 // Initialize everything when page loads
 document.addEventListener('DOMContentLoaded', function() {
