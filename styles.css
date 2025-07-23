@@ -1043,7 +1043,7 @@ body {
 .exit-popup-content {
     background: linear-gradient(135deg, #b30000 0%, #8b0000 100%);
     color: white;
-    padding: 3rem;
+    padding: 1rem;
     border-radius: 20px;
     max-width: 600px;
     width: 100%;
@@ -1137,6 +1137,80 @@ body {
     margin-top: 1.5rem;
     font-weight: 600;
 }
+
+/* Responsividade para o Exit Intent Popup --------------*/
+@media (max-width: 768px) {
+  .exit-popup-content {
+    padding: 2rem 1.5rem;
+    max-width: 90vw;
+    font-size: 0.95rem;
+  }
+
+  .exit-title {
+    font-size: 1.5rem;
+  }
+
+  .exit-warning {
+    font-size: 1rem;
+  }
+
+  .exit-offer-title {
+    font-size: 1.25rem;
+  }
+
+  .exit-price {
+    font-size: 1rem;
+  }
+
+  .price-highlight {
+    font-size: 1.5rem;
+  }
+
+  .exit-guarantee {
+    font-size: 0.75rem;
+  }
+
+  .exit-popup-close {
+    top: 0.75rem;
+    right: 1rem;
+    font-size: 1.75rem;
+  }
+
+  .cta-primary.large {
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .exit-popup-content {
+    padding: 1.5rem 1rem;
+    max-width: 95vw;
+  }
+
+  .exit-title {
+    font-size: 1.25rem;
+  }
+
+  .exit-warning {
+    font-size: 0.95rem;
+  }
+
+  .exit-offer-title {
+    font-size: 1.1rem;
+  }
+
+  .price-highlight {
+    font-size: 1.25rem;
+  }
+
+  .exit-popup-close {
+    top: 0.5rem;
+    right: 0.75rem;
+    font-size: 1.5rem;
+  }
+}
+/* Responsividade para o Exit Intent Popup ---------------*/
 
 /* Animations */
 @keyframes pulse {
