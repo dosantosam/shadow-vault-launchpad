@@ -48,7 +48,7 @@ function handleCtaClick() {
     console.log('CTA clicked - redirecting to checkout...');
     
     // Dispara evento para o Meta Pixel
-    fbq('track', 'Lead'); // ou 'InitiateCheckout' se preferir
+    // fbq('track', 'Lead'); // ou 'InitiateCheckout' se preferir
 
     // Redirect to the payment link
     window.open('https://pay.kirvano.com/3eaa9564-6bd6-49d5-a83b-723fc3cc5ce6', '_blank');
