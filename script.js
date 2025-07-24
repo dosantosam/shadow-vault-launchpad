@@ -131,7 +131,16 @@ let currentQuestion = 1;
 const totalQuestions = 3;
 let quizAnswers = {};
 
+// Function to reset quiz (for testing/debugging)
+function resetQuiz() {
+    localStorage.removeItem('quizCompleted');
+    localStorage.removeItem('quizAnswers');
+    window.location.reload();
+}
+
 function nextQuestion() {
+    console.log(`Attempting to go from question ${currentQuestion} to next question`);
+    
     const currentAnswer = document.querySelector(`input[name="q${currentQuestion}"]:checked`);
     
     if (!currentAnswer) {
@@ -141,21 +150,48 @@ function nextQuestion() {
     
     // Store answer
     quizAnswers[`q${currentQuestion}`] = currentAnswer.value;
+    console.log(`Stored answer for q${currentQuestion}:`, currentAnswer.value);
     
     // Hide current question
-    document.getElementById(`question${currentQuestion}`).style.display = 'none';
+    const currentQuestionEl = document.getElementById(`question${currentQuestion}`);
+    if (currentQuestionEl) {
+        currentQuestionEl.style.display = 'none';
+    }
     
-    // Show next question or submit button
+    // Move to next question
     currentQuestion++;
     
     if (currentQuestion <= totalQuestions) {
-        document.getElementById(`question${currentQuestion}`).style.display = 'block';
+        // Show next question
+        const nextQuestionEl = document.getElementById(`question${currentQuestion}`);
+        if (nextQuestionEl) {
+            nextQuestionEl.style.display = 'block';
+        }
+        
+        // Update progress
         updateProgress();
         
+        // Reset button states for new question
+        const nextBtn = document.getElementById('nextBtn');
+        const submitBtn = document.getElementById('submitBtn');
+        
         if (currentQuestion === totalQuestions) {
-            document.getElementById('nextBtn').style.display = 'none';
-            document.getElementById('submitBtn').style.display = 'block';
+            // Last question - show submit button
+            if (nextBtn) nextBtn.style.display = 'none';
+            if (submitBtn) {
+                submitBtn.style.display = 'block';
+                submitBtn.disabled = true; // Disable until answer is selected
+            }
+        } else {
+            // Not last question - show next button
+            if (nextBtn) {
+                nextBtn.style.display = 'block';
+                nextBtn.disabled = true; // Disable until answer is selected
+            }
+            if (submitBtn) submitBtn.style.display = 'none';
         }
+        
+        console.log(`Now on question ${currentQuestion} of ${totalQuestions}`);
     }
 }
 
@@ -220,10 +256,11 @@ document.addEventListener('change', function(e) {
         const nextBtn = document.getElementById('nextBtn');
         const submitBtn = document.getElementById('submitBtn');
         
-        if (nextBtn && nextBtn.style.display !== 'none') {
+        // Enable the appropriate button based on current question
+        if (currentQuestion < totalQuestions && nextBtn && nextBtn.style.display !== 'none') {
             nextBtn.disabled = false;
         }
-        if (submitBtn && submitBtn.style.display !== 'none') {
+        if (currentQuestion === totalQuestions && submitBtn && submitBtn.style.display !== 'none') {
             submitBtn.disabled = false;
         }
     }
@@ -231,21 +268,48 @@ document.addEventListener('change', function(e) {
 
 // Initialize everything when page loads
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, initializing quiz...');
+    
     // Check if user has already completed the quiz
     const hasCompletedQuiz = localStorage.getItem('quizCompleted');
     
     if (hasCompletedQuiz) {
+        console.log('Quiz already completed, redirecting...');
         // Skip quiz and go directly to main site
         window.location.href = 'https://espancandoareceita.com.br/';
         return;
     }
     
-    // Initialize quiz
+    // Make sure quiz elements exist before initializing
+    const quizContainer = document.getElementById('quizContainer');
+    const nextBtn = document.getElementById('nextBtn');
+    const submitBtn = document.getElementById('submitBtn');
+    
+    if (!quizContainer || !nextBtn || !submitBtn) {
+        console.error('Quiz elements not found!');
+        return;
+    }
+    
+    // Reset quiz state
+    currentQuestion = 1;
+    quizAnswers = {};
+    
+    // Show first question only
+    for (let i = 1; i <= totalQuestions; i++) {
+        const questionEl = document.getElementById(`question${i}`);
+        if (questionEl) {
+            questionEl.style.display = i === 1 ? 'block' : 'none';
+        }
+    }
+    
+    // Initialize button states
+    nextBtn.style.display = 'block';
+    submitBtn.style.display = 'none';
+    nextBtn.disabled = true;
+    submitBtn.disabled = true;
+    
+    // Initialize progress
     updateProgress();
     
-    // Disable buttons initially
-    document.getElementById('nextBtn').disabled = true;
-    document.getElementById('submitBtn').disabled = true;
-    
-    console.log('Quiz loaded successfully');
+    console.log('Quiz initialized successfully');
 });
