@@ -47,14 +47,96 @@
         src="https://www.facebook.com/tr?id=1386283152446028&ev=PageView&noscript=1"/>
     </noscript>
 
-    <!-- Navigation -->
-    <nav class="nav">
-        <div class="nav-container">
-            <div class="nav-brand">🥊 ESPANCANDO A RECEITA</div>
-        </div>
-    </nav>
+    <!-- Quiz Section (Shows First) -->
+    <div id="quizContainer" class="quiz-container">
+        <div class="quiz-content">
+            <div class="quiz-header">
+                <h1 class="quiz-title">🥊 ESPANCANDO A RECEITA FEDERAL</h1>
+                <p class="quiz-subtitle">Responda 3 perguntas rápidas antes de continuar</p>
+            </div>
+            
+            <div class="quiz-form">
+                <div class="question-container" id="question1">
+                    <h3 class="question-title">1. Qual é sua situação atual de trabalho?</h3>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q1" value="clt">
+                            <span class="option-text">CLT</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q1" value="pj">
+                            <span class="option-text">PJ</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q1" value="autonomo">
+                            <span class="option-text">Autônomo</span>
+                        </label>
+                    </div>
+                </div>
 
-    <!-- Hero Section -->
+                <div class="question-container" id="question2" style="display: none;">
+                    <h3 class="question-title">2. Você está insatisfeito com o quanto paga de impostos?</h3>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q2" value="sim">
+                            <span class="option-text">Sim</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q2" value="nao">
+                            <span class="option-text">Não</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-container" id="question3" style="display: none;">
+                    <h3 class="question-title">3. Você conhece alguma estratégia para pagar menos impostos?</h3>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q3" value="sim">
+                            <span class="option-text">Sim</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q3" value="nao">
+                            <span class="option-text">Não</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-navigation">
+                    <button type="button" id="nextBtn" class="quiz-btn" onclick="nextQuestion()">Próxima</button>
+                    <button type="button" id="submitBtn" class="quiz-btn submit-btn" onclick="submitQuiz()" style="display: none;">Finalizar</button>
+                </div>
+
+                <div class="quiz-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <span class="progress-text" id="progressText">1 de 3</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Thank You Section (Hidden Initially) -->
+    <div id="thankYouContainer" class="thank-you-container" style="display: none;">
+        <div class="thank-you-content">
+            <div class="thank-you-icon">✅</div>
+            <h2 class="thank-you-title">Obrigado!</h2>
+            <p class="thank-you-message">Suas respostas foram registradas.</p>
+            <p class="thank-you-redirect">Redirecionando em <span id="redirectCountdown">3</span> segundos...</p>
+        </div>
+    </div>
+
+    <!-- Main Landing Page (Hidden Initially) -->
+    <div id="mainContent" style="display: none;">
+        <!-- Navigation -->
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-brand">🥊 ESPANCANDO A RECEITA</div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
     <section class="hero-section">
         <div class="hero-container">
             <div class="hero-content">
@@ -430,31 +512,33 @@
                 * Baseado na legislação brasileira vigente. Resultados podem variar conforme situação fiscal individual.
             </p>
         </div>
-    </footer>
+        </footer>
 
-    <!-- Exit Intent Popup -->
-    <div id="exitPopup" class="exit-popup" style="display: none;">
-        <div class="exit-popup-overlay">
-            <div class="exit-popup-content">
-                <div class="exit-popup-close" onclick="closeExitPopup()">&times;</div>
-                <h2 class="exit-title">🚨 ESPERA AÍ !</h2>
-                <p class="exit-warning">
-                    Você vai continuar pagando imposto de forma submissa pelo o resto da vida? 
-                    <strong>Sério?</strong> Depois de descobrir que existe um jeito de se vingar legalmente?
-                </p>
-                <div class="exit-offer">
-                    <h3 class="exit-offer-title">ÚLTIMA CHANCE</h3>
-                    <p class="exit-price">🥊 Espancar a Receita Federal: <span class="price-highlight">R$ 17,97</span></p>
-                    <p class="exit-urgency">⏰ Esta janela se fecha em <span id="exit-timer">05:00</span> minutos</p>
-                    <p class="exit-final">Depois disso, você volta a ser capacho do governo. <em>Sua escolha.</em></p>
+        <!-- Exit Intent Popup -->
+        <div id="exitPopup" class="exit-popup" style="display: none;">
+            <div class="exit-popup-overlay">
+                <div class="exit-popup-content">
+                    <div class="exit-popup-close" onclick="closeExitPopup()">&times;</div>
+                    <h2 class="exit-title">🚨 ESPERA AÍ !</h2>
+                    <p class="exit-warning">
+                        Você vai continuar pagando imposto de forma submissa pelo o resto da vida? 
+                        <strong>Sério?</strong> Depois de descobrir que existe um jeito de se vingar legalmente?
+                    </p>
+                    <div class="exit-offer">
+                        <h3 class="exit-offer-title">ÚLTIMA CHANCE</h3>
+                        <p class="exit-price">🥊 Espancar a Receita Federal: <span class="price-highlight">R$ 17,97</span></p>
+                        <p class="exit-urgency">⏰ Esta janela se fecha em <span id="exit-timer">05:00</span> minutos</p>
+                        <p class="exit-final">Depois disso, você volta a ser capacho do governo. <em>Sua escolha.</em></p>
+                    </div>
+                    <button class="cta-primary large" onclick="handleCtaClick()">
+                        🥊 TUDO BEM, QUERO ME VINGAR
+                    </button>
+                    <p class="exit-guarantee">💯 Garantia total de 7 dias ou seu dinheiro de volta</p>
                 </div>
-                <button class="cta-primary large" onclick="handleCtaClick()">
-                    🥊 TUDO BEM, QUERO ME VINGAR
-                </button>
-                <p class="exit-guarantee">💯 Garantia total de 7 dias ou seu dinheiro de volta</p>
             </div>
         </div>
     </div>
+
 
     <script src="script.js"></script>
 </body>
