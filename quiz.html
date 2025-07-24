@@ -1,0 +1,113 @@
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Espancando a Receita Federal - Como Pagar Menos Impostos Legalmente</title>
+    <meta name="description" content="Descubra os segredos que os ricos usam para pagar menos impostos. Métodos 100% legais que ninguém nunca te ensinou. Por apenas R$ 17,97." />
+    <meta name="author" content="Espancando a Receita Federal" />
+
+    <meta property="og:title" content="Espancando a Receita Federal - Como Pagar Menos Impostos Legalmente" />
+    <meta property="og:description" content="Descubra os segredos que os ricos usam para pagar menos impostos. Métodos 100% legais que ninguém nunca te ensinou. Por apenas R$ 17,97." />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/lovable-uploads/2ceb8156-b711-4096-8d1e-4d098e4fec43.png" type="image/png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="quiz.css">
+
+   
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-brand">🥊 ESPANCANDO A RECEITA</div>
+    <!-- Quiz Section (Shows First) -->
+    <div id="quizContainer" class="quiz-container">
+        <div class="quiz-content">
+            <div class="quiz-header">
+                <h1 class="quiz-title">🥊 ESPANCANDO A RECEITA FEDERAL</h1>
+                <p class="quiz-subtitle">Responda 3 perguntas rápidas antes de continuar</p>
+            </div>
+            
+            <div class="quiz-form">
+                <div class="question-container" id="question1">
+                    <h3 class="question-title">1. Qual é sua situação atual de trabalho?</h3>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q1" value="clt">
+                            <span class="option-text">CLT</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q1" value="pj">
+                            <span class="option-text">PJ</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q1" value="autonomo">
+                            <span class="option-text">Autônomo</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-container" id="question2" style="display: none;">
+                    <h3 class="question-title">2. Você está insatisfeito com o quanto paga de impostos?</h3>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q2" value="sim">
+                            <span class="option-text">Sim</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q2" value="nao">
+                            <span class="option-text">Não</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-container" id="question3" style="display: none;">
+                    <h3 class="question-title">3. Você conhece alguma estratégia para pagar menos impostos?</h3>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q3" value="sim">
+                            <span class="option-text">Sim</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q3" value="nao">
+                            <span class="option-text">Não</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-navigation">
+                    <button type="button" id="nextBtn" class="quiz-btn" onclick="nextQuestion()">Próxima</button>
+                    <button type="button" id="submitBtn" class="quiz-btn submit-btn" onclick="submitQuiz()" style="display: none;">Finalizar</button>
+                </div>
+
+                <div class="quiz-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <span class="progress-text" id="progressText">1 de 3</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+    </div>
+
+    <!-- Thank You Section (Hidden Initially) -->
+    <div id="thankYouContainer" class="thank-you-container" style="display: none;">
+        <div class="thank-you-content">
+            <div class="thank-you-icon">✅</div>
+            <h2 class="thank-you-title">Obrigado!</h2>
+            <p class="thank-you-message">Suas respostas foram registradas.</p>
+            <p class="thank-you-redirect">Redirecionando em <span id="redirectCountdown">3</span> segundos...</p>
+        </div>
+    </div>
+
+       <script src="quiz.js"></script>
+</body>
+</html>
