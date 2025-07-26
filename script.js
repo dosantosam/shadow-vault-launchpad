@@ -126,8 +126,70 @@ if (exitPopup) {
     });
 }
 
+// WhatsApp Carousel functionality
+let currentSlide = 0;
+const totalSlides = 4;
+
+function moveCarousel(direction) {
+    const carousel = document.getElementById('whatsappCarousel');
+    const slideWidth = carousel.querySelector('.whatsapp-slide').offsetWidth + 24; // width + gap
+    
+    currentSlide += direction;
+    
+    // Loop around
+    if (currentSlide >= totalSlides) {
+        currentSlide = 0;
+    } else if (currentSlide < 0) {
+        currentSlide = totalSlides - 1;
+    }
+    
+    const scrollPosition = currentSlide * slideWidth;
+    carousel.scrollTo({
+        left: scrollPosition,
+        behavior: 'smooth'
+    });
+    
+    updateCarouselDots();
+}
+
+function updateCarouselDots() {
+    const dotsContainer = document.getElementById('carouselDots');
+    dotsContainer.innerHTML = '';
+    
+    for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('div');
+        dot.className = `carousel-dot ${i === currentSlide ? 'active' : ''}`;
+        dot.onclick = () => goToSlide(i);
+        dotsContainer.appendChild(dot);
+    }
+}
+
+function goToSlide(slideIndex) {
+    const carousel = document.getElementById('whatsappCarousel');
+    const slideWidth = carousel.querySelector('.whatsapp-slide').offsetWidth + 24;
+    
+    currentSlide = slideIndex;
+    const scrollPosition = currentSlide * slideWidth;
+    
+    carousel.scrollTo({
+        left: scrollPosition,
+        behavior: 'smooth'
+    });
+    
+    updateCarouselDots();
+}
+
+// Auto-advance carousel every 5 seconds
+function startCarouselAutoplay() {
+    setInterval(() => {
+        moveCarousel(1);
+    }, 5000);
+}
+
 // Initialize everything when page loads
 document.addEventListener('DOMContentLoaded', function() {
     startCountdown();
+    updateCarouselDots();
+    startCarouselAutoplay();
     console.log('Landing page loaded successfully');
 });

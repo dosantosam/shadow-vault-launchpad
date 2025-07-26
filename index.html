@@ -165,6 +165,11 @@
             
             <div class="pain-revelation">
                 <p><strong>A VERDADE NUA E CRUA:</strong> Os ricos não pagam impostos como você. Eles conhecem as brechas. Você foi ensinado a ser submisso. <em>Isso acaba hoje.</em></p>
+                <div class="pain-cta-container">
+                    <button class="cta-primary medium gold" onclick="handleCtaClick()">
+                        QUERO AS ESTRATÉGIAS DOS RICOS
+                    </button>
+                </div>
             </div>
         </div>
     </section>
@@ -233,48 +238,52 @@
             <h2 class="section-title">Eles Já Estão Espancando a Receita Federal</h2>
             <p class="section-subtitle">Pessoas normais descobrindo como parar de ser otárias do governo</p>
             
-            <!-- WhatsApp Screenshots Placeholder -->
+            <!-- WhatsApp Screenshots Carousel -->
             <div class="whatsapp-screenshots">
                 <h3 class="subsection-title">Depoimentos Reais de Quem Saiu da Matrix Fiscal</h3>
-                <div class="whatsapp-grid">
-                    <!-- Placeholder for WhatsApp screenshots - you can replace with actual images -->
-                    <div class="whatsapp-message">
-                        <div class="whatsapp-bubble">
-                            <img src="public/POC.jpeg" alt="Depoimento">
+                <div class="whatsapp-carousel-container">
+                    <div class="whatsapp-carousel" id="whatsappCarousel">
+                        <div class="whatsapp-slide">
+                            <div class="whatsapp-bubble">
+                                <img src="public/POC.jpeg" alt="Depoimento 1" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="whatsapp-slide">
+                            <div class="whatsapp-bubble">
+                                <img src="public/POC2.jpeg" alt="Depoimento 2" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="whatsapp-slide">
+                            <div class="whatsapp-bubble">
+                                <img src="public/POC3.jpeg" alt="Depoimento 3" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="whatsapp-slide">
+                            <div class="whatsapp-bubble">
+                                <img src="public/POC4.jpeg" alt="Depoimento 4" loading="lazy">
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="whatsapp-message">
-                        <div class="whatsapp-bubble">
-                            <img src="public/POC2.jpeg" alt="Depoimento2">
-                        </div>
+                    <div class="carousel-controls">
+                        <button class="carousel-btn carousel-prev" onclick="moveCarousel(-1)">‹</button>
+                        <button class="carousel-btn carousel-next" onclick="moveCarousel(1)">›</button>
                     </div>
-                    
-                    <div class="whatsapp-message">
-                        <div class="whatsapp-bubble">
-                            <img src="public/POC3.jpeg" alt="Depoimento3">
-                        </div>
-                    </div>
-
-                     <div class="whatsapp-message">
-                        <div class="whatsapp-bubble">
-                            <img src="public/POC4.jpeg" alt="Depoimento3">
-                        </div>
-                    </div>
+                    <div class="carousel-dots" id="carouselDots"></div>
                 </div>
             </div>
         </div>
             
-            <!-- POC Video Placeholder -->
-            <div class="poc-video-section">
-                <h3 class="subsection-title">Prova que Funciona (Mesmo Para Quem Não Entende Nada de Impostos)</h3>
-                <div class="poc-video-placeholder">
-                    <!-- Placeholder for POC video - you can replace with actual video -->
-                     <div class="video-wrapper-poc">
-                        <video class="video-player" controls poster="">
-                            <source src="public/POC.mp4" type="video/mp4">
-                        </video>
-                    </div>
+            <!-- CTA Section replacing POC Video -->
+            <div class="cta-section-replacement">
+                <h3 class="subsection-title">Pronto Para Espancar a Receita Federal?</h3>
+                <p class="cta-description">
+                    Não deixe o governo continuar roubando o que é seu. Use as mesmas estratégias que os ricos usam!
+                </p>
+                <div class="cta-replacement-container">
+                    <button class="cta-primary large prominent gold" onclick="handleCtaClick()">
+                        🥊 QUERO PARAR DE SER OTÁRIO FISCAL
+                    </button>
+                    <div class="cta-price">Apenas R$ 17,97 — Acesso Vitalício</div>
                 </div>
             </div>
         </div>
@@ -326,6 +335,11 @@
                 <div class="why-bottom">
                     <p><strong>ELES NÃO QUEREM QUE VOCÊ SAIBA.</strong> Por isso que escola não ensina educação fiscal. Por isso que contador cobra caro. Por isso que você nunca ouviu falar.</p>
                     <p class="why-final"><em>Mas agora você vai saber. E vai reagir.</em></p>
+                    <div class="why-cta-container">
+                        <button class="cta-primary large gold" onclick="handleCtaClick()">
+                            🥊 QUERO REAGIR AGORA MESMO
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -366,6 +380,11 @@
                     <p>
                         <em>Legalmente. Estrategicamente. Efetivamente.</em>
                     </p>
+                    <div class="trust-cta-container">
+                        <button class="cta-primary large gold" onclick="handleCtaClick()">
+                            🔥 QUERO COMEÇAR MINHA REBELDIA
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

@@ -275,8 +275,8 @@ body {
 
 /* Enhanced CTA Buttons */
 .cta-primary {
-    background: linear-gradient(135deg, #b30000 0%, #8b0000 100%);
-    color: #ffffff;
+    background: linear-gradient(135deg, #ffd700 0%, #ffb700 100%);
+    color: #222222;
     border: none;
     border-radius: 12px;
     padding: 1.25rem 2.5rem;
@@ -284,14 +284,14 @@ body {
     font-weight: 800;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 32px rgba(179, 0, 0, 0.4);
+    box-shadow: 0 8px 32px rgba(255, 215, 0, 0.4);
     display: inline-block;
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
     transform: translateY(0);
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    border: 2px solid #ffd700;
+    border: 2px solid #b30000;
     position: relative;
     overflow: hidden;
 }
@@ -312,10 +312,10 @@ body {
 }
 
 .cta-primary:hover {
-    background: linear-gradient(135deg, #dc143c 0%, #b30000 100%);
+    background: linear-gradient(135deg, #ffed4e 0%, #ffd700 100%);
     transform: translateY(-3px);
-    box-shadow: 0 16px 48px rgba(179, 0, 0, 0.6);
-    border-color: #ffffff;
+    box-shadow: 0 16px 48px rgba(255, 215, 0, 0.6);
+    border-color: #8b0000;
 }
 
 .cta-primary.large {
@@ -335,7 +335,29 @@ body {
 
 .cta-primary.prominent:hover {
     transform: translateY(-4px);
-    box-shadow: 0 20px 60px rgba(179, 0, 0, 0.7);
+    box-shadow: 0 20px 60px rgba(255, 215, 0, 0.7);
+}
+
+/* Gold variant for special CTAs */
+.cta-primary.gold {
+    background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
+    color: #222222;
+    border: 2px solid #b30000;
+    box-shadow: 0 8px 32px rgba(255, 140, 0, 0.4);
+}
+
+.cta-primary.gold:hover {
+    background: linear-gradient(135deg, #ffed4e 0%, #ffa500 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 16px 48px rgba(255, 140, 0, 0.6);
+    border-color: #8b0000;
+}
+
+/* Medium size CTA */
+.cta-primary.medium {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 700;
 }
 
 /* Pain Points Section */
@@ -577,6 +599,134 @@ body {
     right: 12px;
     border: 8px solid transparent;
     border-top-color: #dcf8c6;
+}
+
+/* WhatsApp Carousel Styles */
+.whatsapp-carousel-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.whatsapp-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 1.5rem;
+    padding: 1rem 0.5rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.whatsapp-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.whatsapp-slide {
+    flex: 0 0 auto;
+    width: 300px;
+    min-width: 280px;
+}
+
+.whatsapp-slide .whatsapp-message {
+    margin-bottom: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.whatsapp-slide .whatsapp-bubble {
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.carousel-btn {
+    background: linear-gradient(135deg, #b30000 0%, #8b0000 100%);
+    color: white;
+    border: 2px solid #ffd700;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    font-weight: 900;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-btn:hover {
+    background: linear-gradient(135deg, #dc143c 0%, #b30000 100%);
+    transform: scale(1.1);
+    box-shadow: 0 4px 16px rgba(179, 0, 0, 0.4);
+}
+
+.carousel-btn:active {
+    transform: scale(0.95);
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(179, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+    background: #b30000;
+    transform: scale(1.2);
+}
+
+.carousel-dot:hover {
+    background: #ffd700;
+}
+
+/* CTA Containers */
+.pain-cta-container,
+.why-cta-container,
+.trust-cta-container {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.cta-section-replacement {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border-radius: 20px;
+    margin: 3rem auto;
+    max-width: 800px;
+    border: 2px solid #ffd700;
+}
+
+.cta-description {
+    font-size: 1.25rem;
+    color: #555555;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.cta-replacement-container {
+    margin-top: 2rem;
 }
 
 .video-wrapper-poc {
@@ -1269,6 +1419,27 @@ body {
         gap: 1rem;
     }
     
+    .whatsapp-carousel {
+        gap: 1rem;
+        padding: 1rem 0.25rem;
+    }
+    
+    .whatsapp-slide {
+        width: 260px;
+        min-width: 240px;
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+    }
+    
+    .cta-section-replacement {
+        padding: 3rem 1.5rem;
+        margin: 2rem 1rem;
+    }
+    
     .fact-number {
         font-size: 3rem;
     }
@@ -1325,5 +1496,19 @@ body {
     
     .countdown-container {
         padding: 1.5rem;
+    }
+    
+    .whatsapp-slide {
+        width: 220px;
+        min-width: 200px;
+    }
+    
+    .cta-section-replacement {
+        padding: 2rem 1rem;
+        margin: 1.5rem 0.5rem;
+    }
+    
+    .cta-description {
+        font-size: 1.125rem;
     }
 }
