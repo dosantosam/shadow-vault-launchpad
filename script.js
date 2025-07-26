@@ -183,7 +183,7 @@ function goToSlide(slideIndex) {
 function startCarouselAutoplay() {
     setInterval(() => {
         moveCarousel(1);
-    }, 5000);
+    }, 3500);
 }
 
 // Initialize everything when page loads
